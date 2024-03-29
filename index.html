@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <link href="styling.css" rel="stylesheet" />
+    <title>Ammex Fine Auto</title>
+    <script>
+        var autoplayInterval = 10000;
+        var autoplayTimer = null;
+        var autoplay = true;
+        var newIndex = 1;
+        
+        if (autoplay) {
+             autoplayTimer = setInterval(function() {
+             newIndex++;
+             navigateSlider();
+           }, autoplayInterval);
+        }
+        
+        function resetSlider() { 
+          clearInterval(autoplayTimer);
+        }
+        
+        function navigateSlider() { 
+          const slide1 = document.getElementById('slide1');
+          const slide2 = document.getElementById('slide2');
+          const slide3 = document.getElementById('slide3');
+          const slide4 = document.getElementById('slide4');
+          if (newIndex == 1) {
+            slide1.checked = true;
+          } else if (newIndex == 2) {
+            slide2.checked = true;
+          } else if (newIndex == 3) {
+            slide3.checked = true;
+          } else if (newIndex == 4) {
+            slide4.checked = true;
+            newIndex = 0;
+          }
+        }
+        </script>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="#features">Vehicles in Stock</a></li>
+                <li><a href="#aboutus">About Us</a></li>
+                <li><a href="#aboutus">Reviews</a></li>
+                <li><a href="#features">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1>Get your next vehicle at Ammex Fine Auto!</h1>
+            <p>Welcome to Ammex Fine Auto, where finding your dream vehicle is our top priority! Let us assist you in discovering the perfect match tailored to your needs. Our dedicated team is here to make your car-buying experience seamless and enjoyable. Trust us to deliver excellence, and you'll soon see why choosing Ammex Fine Auto is the best decision you'll make. Your satisfaction is our guarantee!</p>
+        </div>
+
+        <div id="slider">
+   <input type="radio" name="slider" id="slide1" checked>
+   <input type="radio" name="slider" id="slide2">
+   <input type="radio" name="slider" id="slide3">
+   <input type="radio" name="slider" id="slide4">
+   <div id="slides">
+      <div id="overflow">
+         <div class="inner">
+            <div class="slide slide_1">
+               <div class="slide-content">
+                  <h2>Slide 1</h2>
+                  <p>Content for Slide 1</p>
+               </div>
+            </div>
+            <div class="slide slide_2">
+               <div class="slide-content">
+                  <h2>Slide 2</h2>
+                  <p>Content for Slide 2</p>
+               </div>
+            </div>
+            <div class="slide slide_3">
+               <div class="slide-content">
+                  <h2>Slide 3</h2>
+                  <p>Content for Slide 3</p>
+               </div>
+            </div>
+            <div class="slide slide_4">
+               <div class="slide-content">
+                  <h2>Slide 4</h2>
+                  <p>Content for Slide 4</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="controls">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+   </div>
+   <div id="bullets">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+   </div>
+</div>
+</body>
+
+</html>
