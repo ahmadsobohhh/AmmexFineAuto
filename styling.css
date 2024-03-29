@@ -131,9 +131,7 @@ nav ul li a:hover {
 }
 
 #slides {
-    padding: 10px;
-    border: 3px solid white;
-    background: #fff;
+    border-radius: 15px;
     position: relative;
     z-index: 1;
 }
@@ -177,19 +175,19 @@ nav ul li a:hover {
 }
 
 #slides .slide_1 {
-    background: #00171F;
+    background: #000;
 }
 
 #slides .slide_2 {
-    background: #00171F;
+    background: #000;
 }
 
 #slides .slide_3 {
-    background: #00171F;
+    background: #000;
 }
 
 #slides .slide_4 {
-    background: #00171F;
+    background: #000;
 }
 
 #controls {
