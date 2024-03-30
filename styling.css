@@ -174,23 +174,23 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     height: 100%;
-    color: #fff;
+    color: #000;
 }
 
 #slides .slide_1 {
-    background: #000;
+    background: #fff;
 }
 
 #slides .slide_2 {
-    background: #000;
+    background: #fff;
 }
 
 #slides .slide_3 {
-    background: #000;
+    background: #fff;
 }
 
 #slides .slide_4 {
-    background: #000;
+    background: #fff;
 }
 
 #controls {
