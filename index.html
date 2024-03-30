@@ -9,7 +9,7 @@
     <link href="styling.css" rel="stylesheet" />
     <title>Ammex Fine Auto</title>
     <script>
-        var autoplayInterval = 20000;
+        var autoplayInterval = 5000;
         var autoplayTimer = null;
         var autoplay = true;
         var newIndex = 1;
@@ -50,15 +50,13 @@
             <img src="images/logo.png" class="logo">
             <ul>
                 <li><a href="#features">Vehicles in Stock</a></li>
-                <li><a href="#aboutus">About Us</a></li>
-                <li><a href="#aboutus">Reviews</a></li>
+                <li><a href="#slider">About Us</a></li>
+                <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#features">Contact Us</a></li>
             </ul>
         </nav>
         <div class="content">
             <h1>Get your vehicle at Ammex Fine Auto!</h1>
-            <p> Trust us to deliver excellence, and you'll soon see why choosing
-                Ammex Fine Auto is the best decision you'll make. Your satisfaction is our guarantee!</p>
         </div>
 
         <div id="slider">
@@ -71,40 +69,42 @@
                     <div class="inner">
                         <div class="slide slide_1">
                             <div class="slide-content">
-                                <p>Welcome to Ammex Fine Auto, where finding your dream vehicle is our top priority! </p>
+                                <p>Finding your dream vehicle is our top priority!</p>
                             </div>
                         </div>
                         <div class="slide slide_2">
                             <div class="slide-content">
-                                <p>Let us assist you in discovering the perfect match tailored to your needs. Our dedicated team is here to make your car-buying</p>
+                                <p>Located on Bank Street, we give 5 star service to our clients</p>
                             </div>
                         </div>
                         <div class="slide slide_3">
                             <div class="slide-content">
-                                <p>...</p>
+                                <p>We are the highest rated dealership on Google in Ottawa</p>
                             </div>
                         </div>
                         <div class="slide slide_4">
                             <div class="slide-content">
-                                <p>...</p>
+                                <p>Take a look at our inventory and contact us!</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="controls">
-                <label for="slide1"></label>
-                <label for="slide2"></label>
-                <label for="slide3"></label>
-                <label for="slide4"></label>
+                <label for="slide1" onclick="resetSlider()"></label>
+                <label for="slide2" onclick="resetSlider()"></label>
+                <label for="slide3" onclick="resetSlider()"></label>
+                <label for="slide4" onclick="resetSlider()"></label>
             </div>
             <div id="bullets">
-                <label for="slide1"></label>
-                <label for="slide2"></label>
-                <label for="slide3"></label>
-                <label for="slide4"></label>
+                <label for="slide1" onclick="resetSlider()"></label>
+                <label for="slide2" onclick="resetSlider()"></label>
+                <label for="slide3" onclick="resetSlider()"></label>
+                <label for="slide4" onclick="resetSlider()"></label>                
             </div>
         </div>
+        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+        <div class="elfsight-app-ea429655-4529-4d3f-8297-9547e093bc1a" data-elfsight-app-lazy id="reviews"></div>
 </body>
 
 </html>

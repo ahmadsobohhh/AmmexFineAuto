@@ -10,10 +10,10 @@
 .container {
     width: 100%;
     min-height: 200vh;
-    background-image: linear-gradient(to bottom, rgba(98, 92, 92, 0.3), rgba(240, 240, 240, 0.3)), url(images/background.png);
-    background-size: cover, cover;
-    background-position: left, left;
-    background-repeat: no-repeat, no-repeat;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
 }
 
 .logo {
@@ -29,16 +29,13 @@ nav {
     justify-content: space-between;
     background-color: white;
     padding: 10px 8%;
-    /* Adjust padding */
 }
 
 nav ul {
     list-style: none;
     width: auto;
-    /* Change width to auto */
     text-align: right;
     padding-right: 0;
-    /* Remove padding-right */
 }
 
 nav ul li {
@@ -49,11 +46,9 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: black;
     text-decoration: none;
-    background: black;
     padding: 10px 20px;
-    /* Adjust padding */
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -94,16 +89,21 @@ nav ul li a:hover {
 
 .content {
     margin-top: 8%;
-    color: rgb(255, 255, 255);
+    color: white;
     max-width: 1000px;
     padding: 10px 8%;
 }
 
 .content h1 {
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px 0;
     font-size: 65px;
     font-weight: 600;
     line-height: 85px;
-    margin-bottom: 25px;
+    margin-bottom: 200px;
 }
 
 .content p {
@@ -113,12 +113,15 @@ nav ul li a:hover {
     margin: 70px 20px;
     width: 1000px;
 }
+.elfsight-app-ea429655-4529-4d3f-8297-9547e093bc1a {
+    padding-top: 50px;
+}
 
 #slider {
     margin: 0 auto;
-    width: 800px;
-    max-width: 100%;
+    width: 600px;
     text-align: center;
+    border-radius: 20px; 
 }
 
 #slider input[type=radio] {
@@ -240,7 +243,7 @@ nav ul li a:hover {
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    background: #fff;
+    background: #000;
     margin: 0 10px;
 }
 
@@ -248,7 +251,7 @@ nav ul li a:hover {
 #slide2:checked~#bullets label:nth-child(2),
 #slide3:checked~#bullets label:nth-child(3),
 #slide4:checked~#bullets label:nth-child(4) {
-    background: #444;
+    background: #fff;
 }
 
 @media screen and (max-width: 900px) {
