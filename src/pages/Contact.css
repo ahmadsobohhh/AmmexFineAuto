@@ -1,0 +1,80 @@
+.contactPageBackGround {
+    padding: 9rem;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+
+.contactPageh1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: lighter;
+}
+
+.contactContent {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+}
+
+.contactTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: lighter;
+}
+
+.contactContent form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    width: 100%;
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+    width: 100%;
+    justify-content: left;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.formGroup textarea {
+    height: 150px;
+    resize: none;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--pr);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Center the button */
+}
+
+button:hover {
+    background-color: #e65c00;
+}

@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.homePageBackGround {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center; 
+}
+
+.homePageBackGround::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 100px 50px rgba(0, 0, 0, 0.7);
+}
+
+h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: lighter;
+    color: white;
+    z-index: 3; 
+
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+    z-index: 3; 
+
+}
+
+h1 {
+    margin: 0;
+    font-size: 4rem;
+    color: white;
+    z-index: 3; 
+
+}
+
+.homePageh1 {
+    border-color: white;
+    position: relative;
+    border-bottom: 1rem;
+    font-weight: 500;
+    padding: 1rem;
+}
+
+.homePageh1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    border-bottom: 5px solid white; /* Adjust thickness as needed */
+}
+
+.boxContainer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 25rem;
+    z-index: 3; /* Ensure the boxes are above the background overlay */
+}
+
+.box {
+    background-color: black;
+    width: 30rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    padding: 3rem;
+    gap: 1rem;
+    position: relative; /* Make it a positioned element for absolute children */
+    background-size: cover; /* Ensures the image covers the entire box */
+    background-position: center; /* Center the background image */
+    position: relative; /* Make it a positioned element for absolute children */
+    text-decoration: none; /* Remove underline */
+}
+
+.box::after {
+    content: '';
+    position: absolute; /* Position it absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(67, 12, 10, 0.6);
+    z-index: 1; 
+    border-radius: 10px; 
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Indivisual ID boxes */
+
+.boxh4 {
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.icons {
+    z-index: 3;
+}
+
+.boxContainer a {
+    text-decoration: none;
+    outline: none;
+}
+
+.boxContainer a:focus {
+    outline: none;
+}
+
+
+.customerReviews {
+    padding: 5rem;
+    background-color: rgba(0,0,0,0.3);
+    position: relative; /* Make it a positioned element for absolute children */
+    background-size: cover; /* Ensures the image covers the entire box */
+    background-position: center; /* Center the background image */
+    color: white; /* Ensure text is readable over the dark background */
+}
+
+.customerReviews::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1; /* Ensure it is behind the content */
+}
+
+.customerReviews > * {
+    position: relative;
+    z-index: 2; /* Ensure content is above the pseudo-element */
+    font-weight: lighter;
+}
+
+.black-border {
+    background-color: black;
+    padding: 3rem;
+}

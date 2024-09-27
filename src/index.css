@@ -1,8 +1,27 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: rgb(67, 12, 10);
+  --secondary-color: #292929;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+code {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +29,104 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.nav {
+  background-color: #FFF;
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin: 0 20rem;
+  width: 65%;
+}
+
+.site-title {
+  font-size: 2rem;
+  padding: 0.75rem 0;
+  margin: 0;
+}
+
+.logo {
+  height: 80px;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+}
+
+.nav ul li {
+  font-size: 1.1rem;
+  padding: 5px 5px;
+  border-radius: 7px;
+  transition: font-weight 0.1s ease;
+  text-align: center;
+  width: 80px;
+}
+
+.nav li:hover {
+  font-weight: bold;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+  left: 0;
+  background: var(--primary-color);
+}
+
+.endFooter {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 20rem;
+}
+
+h5 {
+  margin: 1rem;
+  font-weight: 100;
+  color: grey;
+}
+
+.facebookicon {
+  max-width: 30px;
+  max-height: 30px;
+  width: auto;
+  height: auto;
+}
+
+.customerReviews {
+  margin-top: 0; /* Ensure no margin at the top */
+  padding-top: 0; /* Ensure no padding at the top */
+  padding: 20px; /* Adjust other padding as needed */
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.googleMaps {
+  text-align: center;
+  background-color: #f9f9f9;
 }
