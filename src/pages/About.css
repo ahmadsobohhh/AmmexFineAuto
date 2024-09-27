@@ -1,0 +1,74 @@
+.aboutPageBackGround {
+    padding: 10rem;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+
+.aboutPageh1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: lighter;
+}
+
+.aboutContent {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+}
+
+.aboutContent p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.teamSection {
+    padding: 5rem 10rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.teamSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: lighters;
+}
+
+.teamContainer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.teamMember {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 200px;
+}
+
+.teamMember img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.teamMember h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.teamMember p {
+    font-size: 1rem;
+    color: #666;
+}
+
+h2 {
+    font-weight: lighter;
+}
