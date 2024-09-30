@@ -10,6 +10,7 @@ function Inventory() {
     const [showFilters, setShowFilters] = useState(false);
     const [color, setColor] = useState('');
     const [details, setDetails] = useState('');
+    const [error, setError] = useState(null);
 
     const makes = ['Audi', 'BMW', 'Chevrolet', 'Dodge', 'Ford', 'Honda', 'Hyundai', 'Jaguar', 'Jeep', 'Kia', 'Lexus', 'Mazda', 'Mercedes-Benz', 'Nissan', 'Porsche', 'Subaru', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo'];
     const models = {
@@ -36,10 +37,15 @@ function Inventory() {
     };
 
     useEffect(() => {
-        fetch('/api/cars')  // Adjust the API endpoint if necessary
-            .then(response => response.json())
-            .then(data => setCars(data)) // Use setCars to update the state
-            .catch(error => console.error('Error fetching cars:', error));
+        fetch('/api/cars')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => setCars(data))
+            .catch(error => setError(error));
     }, []);
     
 
@@ -105,36 +111,14 @@ function Inventory() {
                         />
                         <span>{formatPriceRange()}</span>
                     </div>
-
-                    <button onClick={() => setShowFilters(!showFilters)}>All Filters</button>
                     <button onClick={resetFilters}>Reset All Filters</button>
                 </div>
-                {showFilters && (
-                    <div className="additional-filters">
-                        <label htmlFor="color">Color:</label>
-                        <select id="color" value={color} onChange={(e) => setColor(e.target.value)}>
-                            <option value="">Select Color</option>
-                            <option value="black">Black</option>
-                            <option value="white">White</option>
-                            <option value="red">Red</option>
-                            <option value="blue">Blue</option>
-                        </select>
-
-                        <label htmlFor="details">Details:</label>
-                        <input
-                            type="text"
-                            id="details"
-                            value={details}
-                            onChange={(e) => setDetails(e.target.value)}
-                            placeholder="Enter details"
-                        />
-                    </div>
-                )}
             </div>
             <div className="inventory-show-case">
                 {cars.length > 0 ? (
                     cars.map((car) => (
                         <div className="car-card" key={car._id}>
+                            <img src={car.imageUrl} alt={`${car.make} ${car.model}`} />
                             <h3>{car.make} {car.model}</h3>
                             <p>Year: {car.year}</p>
                             <p>Price: ${car.price}</p>

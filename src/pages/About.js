@@ -28,19 +28,16 @@ function About() {
                 <h2>Meet Our Team</h2>
                 <div className="teamContainer">
                     <div className="teamMember">
-                        <img src={`${process.env.PUBLIC_URL}/teamMember1.jpg`} alt="Team Member 1" />
-                        <h3>H</h3>
-                        <p>CEO</p>
+                        <img src={`${process.env.PUBLIC_URL}/hassanDahrouj.jpeg`} alt="Hassan Dahrouj" />
+                        <p>Hassan Dahrouj</p>
                     </div>
                     <div className="teamMember">
-                        <img src={`${process.env.PUBLIC_URL}/teamMember2.jpg`} alt="Team Member 2" />
-                        <h3>Jane Smith</h3>
-                        <p>Sales Manager</p>
+                        <img src={`${process.env.PUBLIC_URL}/omarDahrouj.jpeg`} alt="Omar Dahrouj" />
+                        <p>Omar Dahrouj</p>
                     </div>
                     <div className="teamMember">
-                        <img src={`${process.env.PUBLIC_URL}/teamMember3.jpg`} alt="Team Member 3" />
-                        <h3>Mike Johnson</h3>
-                        <p>Service Manager</p>
+                        <img src={`${process.env.PUBLIC_URL}/teamMember3.jpeg`} alt="Team Member 3" />
+                        <p>Bashar (LastName) </p>
                     </div>
                 </div>
             </div>
