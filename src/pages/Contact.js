@@ -26,7 +26,7 @@ function Contact() {
                 <div className="contactContent">
                     <form onSubmit={handleSubmit}>
                         <div className="formGroup">
-                            <label htmlFor="email">Email:</label>
+                            <label htmlFor="email">Your Email:</label>
                             <input
                                 type="email"
                                 id="email"
@@ -36,7 +36,7 @@ function Contact() {
                             />
                         </div>
                         <div className="formGroup">
-                            <label htmlFor="message">Message:</label>
+                            <label htmlFor="message">Your Message:</label>
                             <textarea
                                 id="message"
                                 value={message}

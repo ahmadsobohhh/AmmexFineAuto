@@ -1,0 +1,143 @@
+.inventory {
+    padding: 5rem 1rem;
+    margin: 0 20rem;
+    width: 65%;
+}
+
+.title {
+    color: black;
+    font-size: 2.5rem;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.inventory-header {
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.row-filters label {
+    margin-right: 0.5rem;
+    font-weight: lighter;
+}
+
+.row-filters select,
+.row-filters input[type="range"] {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.price-range {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price-range span {
+    margin-top: 0.5rem;
+    font-weight: lighter;
+}
+
+.horizontal-slider {
+    width: 200px;
+    height: 8px;
+    margin-top: 0.5rem;
+}
+
+.thumb {
+    position: absolute;
+    translate: 0 -2px;
+    height: 15px;
+    width: 15px;
+    background-color: navy;
+    cursor: pointer;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.track {
+    background: #ccc;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.row-filters button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: navy;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: lighter;
+}
+
+.row-filters button:hover {
+    background-color: black;
+}
+
+.additional-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.additional-filters label {
+    margin-right: 0.5rem;
+    font-weight: lighter;
+}
+
+.additional-filters select,
+.additional-filters input[type="text"] {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.inventory-show-case {
+    background-color: lightgrey;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.car-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.car-card h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: navy;
+}
+
+.car-card p {
+    margin: 0.5rem 0;
+    color: black;
+}

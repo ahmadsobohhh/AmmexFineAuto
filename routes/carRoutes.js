@@ -1,11 +1,12 @@
 const express = require('express');
-const Car = require('../models/car'); // Adjust the path as necessary
+const Car = require('../models/car');
 
 const router = express.Router();
 
 // Add a car
 router.post('/', async (req, res) => {
     const newCar = new Car(req.body);
+    console.log(req.body); // Add this line to see the incoming data
     try {
         const savedCar = await newCar.save();
         res.status(201).json(savedCar);

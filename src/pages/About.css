@@ -8,12 +8,12 @@
 
 .aboutPageh1 {
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     font-weight: lighter;
 }
 
 .aboutContent {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 2rem;
     border-radius: 10px;
     max-width: 800px;
