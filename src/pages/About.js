@@ -35,10 +35,6 @@ function About() {
                         <img src={`${process.env.PUBLIC_URL}/omarDahrouj.jpeg`} alt="Omar Dahrouj" />
                         <p>Omar Dahrouj</p>
                     </div>
-                    <div className="teamMember">
-                        <img src={`${process.env.PUBLIC_URL}/teamMember3.jpeg`} alt="Team Member 3" />
-                        <p>Bashar (LastName) </p>
-                    </div>
                 </div>
             </div>
         </>

@@ -1,13 +1,33 @@
 const express = require('express');
 const Car = require('../models/car');
+const multer = require('multer');
+const path = require('path');
 
 const router = express.Router();
 
-// Add a car
-router.post('/', async (req, res) => {
-    const newCar = new Car(req.body);
-    console.log(req.body); // Add this line to see the incoming data
+// Set up multer storage and file naming
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}-${file.originalname}`);
+    }
+});
+
+const upload = multer({ storage });
+
+// Add a car with image upload
+router.post('/', upload.single('image'), async (req, res) => {
     try {
+        const newCar = new Car({
+            make: req.body.make,
+            model: req.body.model,
+            year: req.body.year,
+            price: req.body.price,
+            imageUrl: `/uploads/${req.file.filename}` // Store image URL
+        });
+        
         const savedCar = await newCar.save();
         res.status(201).json(savedCar);
     } catch (error) {
@@ -24,6 +44,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(error);
     }
 });
+
 
 // Update a car
 router.put('/:id', async (req, res) => {
