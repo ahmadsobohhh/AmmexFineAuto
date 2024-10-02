@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Admin.module.css";
 
 function Admin() {
@@ -12,9 +12,41 @@ function Admin() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [cars, setCars] = useState([]);
 
-    const ADMIN_USERNAME = "admin"; // Replace with your admin username
-    const ADMIN_PASSWORD = "password"; // Replace with your admin password
+    const ADMIN_USERNAME = process.env.REACT_APP_ADMIN_USERNAME;
+    const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD;
+    
+    
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            fetchCars();
+        }
+    }, [isAuthenticated]);
+
+    const fetchCars = () => {
+        fetch("/api/cars")
+            .then((response) => response.json())
+            .then((data) => setCars(data))
+            .catch((error) => setMessage(error.message));
+    };
+
+    const fetchCarDetails = (id) => {
+        fetch(`/api/cars/${id}`)
+            .then((response) => {
+                if (!response.ok) throw new Error("Vehicle not found");
+                return response.json();
+            })
+            .then((car) => {
+                setMake(car.make);
+                setModel(car.model);
+                setYear(car.year);
+                setPrice(car.price);
+                setImageFile(null); // Reset image file
+            })
+            .catch((error) => setMessage(error.message));
+    };
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -46,25 +78,35 @@ function Admin() {
             .then(() => {
                 setMessage("Vehicle created successfully!");
                 setMake(""); setModel(""); setYear(""); setPrice(""); setImageFile(null);
+                fetchCars(); // Refresh the list of cars
             })
             .catch((error) => setMessage(error.message));
     };
 
     const handleDelete = (e) => {
         e.preventDefault();
-
+    
         fetch(`/api/cars/${vehicleId}`, {
             method: "DELETE",
         })
             .then((response) => {
                 if (!response.ok) throw new Error("Failed to delete vehicle");
-                return response.json();
-            })
-            .then(() => {
+                // No need to parse JSON if there's no content in the response
                 setMessage("Vehicle deleted successfully!");
                 setVehicleId("");
+                fetchCars(); // Refresh the list of cars
             })
             .catch((error) => setMessage(error.message));
+    };
+    
+
+    const handleFetchCar = (e) => {
+        e.preventDefault();
+        if (vehicleId) {
+            fetchCarDetails(vehicleId);
+        } else {
+            setMessage("Please enter a vehicle ID.");
+        }
     };
 
     return (
@@ -138,7 +180,8 @@ function Admin() {
                             <label htmlFor="imageFile">Image:</label>
                             <input
                                 type="file"
-                                id="image"
+                                id="imageFile"
+                                name="imageFile"
                                 onChange={(e) => setImageFile(e.target.files[0])}
                             />
                         </div>
@@ -157,6 +200,16 @@ function Admin() {
                         </div>
                         <button type="submit">Delete Vehicle</button>
                     </form>
+                    <div className="car-list">
+                        <h2>Available Vehicles</h2>
+                        <ul>
+                            {cars.map((car) => (
+                                <li key={car._id}>
+                                    <strong>ID:</strong> {car._id} - {car.make} {car.model}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             )}
             {message && <div className="message">{message}</div>}

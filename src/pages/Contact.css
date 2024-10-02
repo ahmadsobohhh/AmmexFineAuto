@@ -1,5 +1,5 @@
 .contactPageBackGround {
-    padding: 14rem;
+    padding: 18rem;
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -10,6 +10,7 @@
     font-size: 3rem;
     margin-bottom: 2rem;
     font-weight: lighter;
+    color: black;
 }
 
 .contactContent {
