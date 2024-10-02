@@ -1,0 +1,72 @@
+.admin {
+    max-width: 800px;
+    margin: 2rem auto; /* Centered horizontally */
+    padding: 2rem; /* Reduced padding */
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin h1 {
+    text-align: center;
+    color: #333; /* Darker color for better readability */
+    margin-bottom: 1.5rem;
+}
+
+.admin .forms-container {
+    display: flex;
+    flex-direction: column; /* Stack forms vertically */
+    gap: 2rem; /* Space between forms */
+}
+
+.admin .form-section {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin .form-group {
+    margin-bottom: 1rem; /* Increased bottom margin */
+}
+
+.admin label {
+    display: block;
+    margin-bottom: 0.5rem; /* Reduced margin for labels */
+    font-weight: bold; /* Make labels bold */
+}
+
+.admin input[type="text"],
+.admin input[type="number"],
+.admin input[type="file"],
+.admin button {
+    width: 50%; /* Full width for inputs and buttons */
+    padding: 0.8rem; /* Reduced padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem; /* Increased font size */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform for hover effect */
+    margin: 3rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+.message {
+    margin: 1rem 0;
+    color: #28a745; /* Green for success messages */
+    font-weight: bold; /* Make message bold */
+}
+
+.message.error {
+    color: #dc3545; /* Red for error messages */
+}

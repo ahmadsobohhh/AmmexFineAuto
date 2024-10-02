@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Add a car with image upload
-router.post('/', upload.single('image'), async (req, res) => {
+router.post('/', upload.single('imageFile'), async (req, res) => {
     try {
         const newCar = new Car({
             make: req.body.make,

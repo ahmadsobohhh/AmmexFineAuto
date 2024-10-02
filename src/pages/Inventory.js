@@ -292,17 +292,20 @@ function Inventory() {
         <div className="inventory">
             <h1 className="title">Vehicles in Stock</h1>
             <div className="inventory-header">
+                {/* Filters section */}
                 <div className="row-filters">
+                    {/* Make dropdown */}
                     <label htmlFor="make">Make:</label>
                     <select id="make" value={make} onChange={handleMakeChange}>
-                        <option value="">Select Make</option>
+                        <option value="">All Makes</option>
                         {makes.map((make) => (
                             <option key={make} value={make}>
                                 {make}
                             </option>
                         ))}
                     </select>
-
+    
+                    {/* Model dropdown */}
                     <label htmlFor="model">Model:</label>
                     <select
                         id="model"
@@ -318,7 +321,8 @@ function Inventory() {
                                 </option>
                             ))}
                     </select>
-
+    
+                    {/* Price range slider */}
                     <label htmlFor="priceRange">Price Range:</label>
                     <div className="price-range">
                         <ReactSlider
@@ -334,22 +338,36 @@ function Inventory() {
                         />
                         <span>{formatPriceRange()}</span>
                     </div>
+    
+                    {/* Reset button */}
                     <button onClick={resetFilters}>Reset All Filters</button>
                 </div>
             </div>
+    
+            {/* Filtered cars display */}
             <div className="inventory-show-case">
                 {cars.length > 0 ? (
-                    cars.map((car) => (
-                        <div className="car-card" key={car._id}>
-                            <img src={car.imageUrl} alt={`${car.make} ${car.model}`} />{" "}
-                            {/* Display image */}
-                            <h3>
-                                {car.make} {car.model}
-                            </h3>
-                            <p>Year: {car.year}</p>
-                            <p>Price: ${car.price}</p>
-                        </div>
-                    ))
+                    cars
+                        .filter((car) => {
+
+                            const matchesMake = make ? car.make === make : true;
+                            const matchesModel = model ? car.model === model : true;
+                            const matchesPrice = car.price >= priceRange[0] && car.price <= priceRange[1];
+    
+                            return matchesMake && matchesModel && matchesPrice;
+                        })
+                        .map((car) => (
+                            <div className="car-card" key={car._id}>
+                                <img src={car.imageUrl} alt={`${car.make} ${car.model}`} /> {/* Display image */}
+                                <h3>
+                                    {car.make} {car.model}
+                                </h3>
+                                <div className="body-line-up">
+                                    <p>Year: {car.year}</p>
+                                    <p>Price: ${car.price}</p>
+                                </div>
+                            </div>
+                        ))
                 ) : (
                     <p>No cars available</p>
                 )}

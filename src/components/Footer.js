@@ -10,13 +10,13 @@ function Footer() {
           <div className="dealership-hours">
             <h6>Dealership Hours</h6>
             <ul>
-              <li><span className="day">Monday:</span><span className="time">10:00AM - 7:00PM</span></li>
-              <li><span className="day">Tuesday:</span><span className="time">10:00AM - 7:00PM</span></li>
-              <li><span className="day">Wednesday:</span><span className="time">10:00AM - 7:00PM</span></li>
-              <li><span className="day">Thursday:</span><span className="time">10:00AM - 7:00PM</span></li>
-              <li><span className="day">Friday:</span><span className="time">10:00AM - 7:00PM</span></li>
-              <li><span className="day">Saturday:</span><span className="time">10:00AM - 7:00PM</span></li>
-              <li><span className="day">Sunday:</span><span className="time">10:00AM - 6:30PM</span></li>
+              <li><span className="day">Monday:</span><span className="time">10:00AM - 6:00PM</span></li>
+              <li><span className="day">Tuesday:</span><span className="time">10:00AM - 6:00PM</span></li>
+              <li><span className="day">Wednesday:</span><span className="time">10:00AM - 6:00PM</span></li>
+              <li><span className="day">Thursday:</span><span className="time">12:00PM - 6:00PM</span></li>
+              <li><span className="day">Friday:</span><span className="time">10:00AM - 6:00PM</span></li>
+              <li><span className="day">Saturday:</span><span className="time">10:30AM - 3:00PM</span></li>
+              <li><span className="day">Sunday:</span><span className="time">CLOSED - CLOSED</span></li>
             </ul>
           </div>
           <div className="address">
